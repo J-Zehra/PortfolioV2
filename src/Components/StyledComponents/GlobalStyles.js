@@ -15,5 +15,10 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Poppins';
         list-style: none;
         text-decoration: none;
+        scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar{
+        display: none;
     }
 `

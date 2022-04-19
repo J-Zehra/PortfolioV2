@@ -10,7 +10,47 @@ export const NavBar = styled.nav`
     padding-block: 1rem;
     position: absolute;
     justify-content: space-between;
+
+    svg{
+        display: none;
+        z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+        height: 7rem;
+
+        svg{
+            display: block;
+        }
+    }
 `
+export const NavToggle = styled(NavLinks)`
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 15rem;
+    background-color: var(--light-green);
+    z-index: 1;
+    gap: 1rem;
+
+    a{
+        color: var(--primary-green);
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .active{
+        position: relative;
+        font-size: 1.15rem;
+        border-bottom: 1px solid var(--primary-green);
+    }
+`
+
 export const NavLogo = styled(Logo)`
     color: var(--light-green);
     font-size: 1.5rem;
@@ -19,6 +59,16 @@ export const NavLogo = styled(Logo)`
     span{
         font-size: 3rem;
         font-family: 'Beau Rivage';
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1.2rem;
+        visibility: hidden;
+
+        span{
+            visibility: visible;
+            font-size: 3.5rem;
+        }
     }
 `
 
@@ -58,5 +108,10 @@ export const NavLink = styled(NavLinks)`
             position: absolute;
             border-radius: 20rem;
         }
+    }
+
+    @media (max-width: 768px) {
+        gap: 0;
+        display: none;
     }
 `
